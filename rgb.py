@@ -149,7 +149,7 @@ def avg_rgb(rgb1, rgb2):
 # accepts an [h,s,v] array and an integer to shift the h value by, returns [h,s,v]
 def hue_shift(hsv, deg):
     if deg < 0 or deg > 360:
-                    raise BaseException("Bad hue val")
+        raise BaseException("Bad hue val")
     if hsv[0] + deg > 360:
         deg = deg - (360 - hsv[0])
         hsv[0] = 0
