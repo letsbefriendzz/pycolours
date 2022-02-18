@@ -1,20 +1,24 @@
 # pycolours
 
+-- this readme isn't finished! i'll be back to finish it soon!
+
 I take particular interest in digital media, from audio processing to photo and video.
 
 In this program, I sought to implement various mathematical conversion algorithms for RGB & HSV colour formats.
 
-##  RGB
+##  RGB & HSV
+
+![rgb-cube](https://miro.medium.com/max/1400/1*W30TLUP9avQwyyLfwu7WYA.jpeg)
+
+### RGB
 
 Digital colour is represented using only the three primary colours; **red**, **green**, and **blue**.
 
 A single pixel, being nothing but a combination of these three values, can be represented as a cube with the RGB coordinates varying from 0-255.
 
-## HSV
+### HSV
 
 HSV is an alternative method of representing digital colour. instead of coordinates within our hypothetical RGB cube, the HSV method defines coordinates within a cylinder. **Hue** defines the angle, as measured from within the centre of the cylinder, that the **saturation** and **value** coordinates occur. **Saturation**, a value from 0 - 1, defines the location between the centre of the cylinder and the edge of it, and the **value** represents the vertical coordinate.
-
-![rgb-cube](https://miro.medium.com/max/1400/1*W30TLUP9avQwyyLfwu7WYA.jpeg)
 
 ## RGB -> HSV
 
@@ -56,7 +60,30 @@ def generate_hue(rgb):
 
 ### Saturation Generation
 
+To create a saturation value, we create C (chroma) by dividing the maximum value by the minimum value, from those within our RGB array. If the Value (or maximum value from RGB) is zero, the saturation value we return is zero. Otherwise, we calculate saturation by dividing chroma (C) by the maximum value (V).
+
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-scalc.PNG" alt="RGB->HSV Sat" style="height:50%; width:50%;"/>
+
+```python
+def generate_sat(cmax, dlt):
+    if cmax == 0:
+        return cmax
+    else:
+        return dlt / cmax
+```
+
 ### Value Generation
+
+The Value field is the easiest to populate. As established, we take the RGB values passed and divide them by 255, converting them from a range of 0 - 255 to 0 - 1. Then, from these decimal values, we take the largest among them, and this is the value.
+
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-vcalc.PNG" alt="RGB->HSV Sat" style="height:50%; width:50%;"/>
+
+Really, the below function isn't necessary; you could just perform this operation within the parent rgb_to_hsv function. For legibility's sake, however, I've kept it.
+
+```python
+def generate_val(rgb):
+    return max(rgb)
+```
 
 ## HSV -> RGB
 
