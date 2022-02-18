@@ -28,4 +28,4 @@ Given an HSV value, using the following function, we can determine that
 
 Where `k` is
 
-![HSV->RGB K Definition](https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG)
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG" alt="HSV->RGB K" style="height:600px"/>
