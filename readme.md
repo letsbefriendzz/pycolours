@@ -1,7 +1,5 @@
 # pycolours
 
--- this readme isn't finished! i'll be back to finish it soon!
-
 I take particular interest in digital media, from audio processing to photo and video.
 
 In this program, I sought to implement various mathematical conversion algorithms for RGB & HSV colour formats.
