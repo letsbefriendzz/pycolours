@@ -26,6 +26,11 @@ Given an HSV value, using the following function, we can determine that
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:50%; width:50%;"/>
 
+```python
+def hsv_func(hsv, n):
+    return hsv[2] - ( hsv[2] * hsv[1] ) * max( 0, min(calc_k(hsv[0], n), 4 - calc_k(hsv[0], n), 1) )
+```
+
 Where `k` is
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG" alt="HSV->RGB K" style="height:50%; width:50%;"/>
