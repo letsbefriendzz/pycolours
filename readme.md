@@ -24,8 +24,8 @@ Given an HSV value, using the following function, we can determine that
 
 `(RGB) = f(5) x 255, f(3) x 255, f(1) x 255`
 
-![HSV->RGB Function](https://wikimedia.org/api/rest_v1/media/math/render/svg/a4d4d5829a18dd1e4339a326d54a9635839a480f)
+![HSV->RGB Function](https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG)
 
 Where `k` is
 
-![HSV->RGB K Definition](https://wikimedia.org/api/rest_v1/media/math/render/svg/7e96c674651471f7510a63d840cf11dc915757de)
+![HSV->RGB K Definition](https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG)
