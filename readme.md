@@ -6,4 +6,4 @@ Digital colour is represented using only the three primary colours; **red**, **g
 
 A single pixel, being nothing but a combination of these three values, can be represented as a cube with the RGB coordinates varying from 0-255.
 
-![rgb-cube](https://upload.wikimedia.org/wikipedia/commons/a/af/RGB_color_solid_cube.png)
+![rgb-cube](https://i.stack.imgur.com/CrcfM.png)
