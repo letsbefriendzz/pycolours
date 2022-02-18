@@ -26,6 +26,8 @@ Given an HSV value, using the following function, we can determine that
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:50%; width:50%;"/>
 
+This is very straight forward to implement. We create a function with two parameters; hsv, a three element array representing hue, saturation and value, and n, to sub into our function.
+
 ```python
 def hsv_func(hsv, n):
     return hsv[2] - ( hsv[2] * hsv[1] ) * max( 0, min(calc_k(hsv[0], n), 4 - calc_k(hsv[0], n), 1) )
@@ -34,3 +36,10 @@ def hsv_func(hsv, n):
 Where `k` is
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG" alt="HSV->RGB K" style="height:50%; width:50%;"/>
+
+Even simpler to implement, `calc_k` takes a hue value and an n value, and performs the above arithmetic.
+
+```python
+def calc_k(h, n):
+    return ( n + ( h / 60 ) ) % 6
+```
