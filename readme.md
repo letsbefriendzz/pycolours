@@ -23,8 +23,8 @@ HSV is an alternative method of representing digital colour. instead of coordina
 Given an HSV value, using the following function, we can determine that
 
 `(RGB) = f(5) x 255, f(3) x 255, f(1) x 255`
-<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:150px"/>
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:50%; width:50%;"/>
 
 Where `k` is
 
-<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG" alt="HSV->RGB K" style="height:100px"/>
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-k.PNG" alt="HSV->RGB K" style="height:50%; width:50%;"/>
