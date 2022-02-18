@@ -111,7 +111,7 @@ def generate_sat(cmax, dlt):
 
 The Value field is the easiest to populate. As established, we take the RGB values passed and divide them by 255, converting them from a range of 0 - 255 to 0 - 1. Then, from these decimal values, we take the largest among them, and this is the value.
 
-<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-vcalc.PNG" alt="RGB->HSV Sat" style="height:20%; width:20%;"/>
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-vcalc.PNG" alt="RGB->HSV Sat" style="height:40%; width:40%;"/>
 
 Really, the below function isn't necessary; you could just perform this operation within the parent rgb_to_hsv function. For legibility's sake, however, I've kept it.
 
@@ -126,7 +126,7 @@ Given an HSV value, using the following function, we can determine that
 
 `(RGB) = f(5) x 255, f(3) x 255, f(1) x 255`
 
-<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:20%; width:20%;"/>
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:40%; width:40%;"/>
 
 This is very straight forward to implement. We create a function with two parameters; hsv, a three element array representing hue, saturation and value, and n, to sub into our function.
 
