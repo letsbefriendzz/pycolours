@@ -30,6 +30,10 @@ def rgb_to_hsv(rgb):
 
 ### Hue Generation
 
+Hue generation is a quite involved process. It is dependent on the Value, which is incredibly easy to determine.
+
+<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-hcalc.PNG" alt="HSV->RGB f(n)" style="height:50%; width:50%;"/>
+
 ```python
 def generate_hue(rgb):
     mx = max( rgb )
