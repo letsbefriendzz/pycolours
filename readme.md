@@ -18,6 +18,42 @@ HSV is an alternative method of representing digital colour. instead of coordina
 
 ## RGB -> HSV
 
+```python
+def rgb_to_hsv(rgb):
+    rgb_frac = [ rgb[0] / 255, rgb[1] / 255, rgb[2] / 255 ]
+    # each subsequent helper function expects R'G'B', not RGB.
+    h = generate_hue( rgb_frac )
+    s = generate_sat(max( rgb_frac), max( rgb_frac ) - min( rgb_frac ))
+    v = max( rgb_frac )
+    return [h,s,v]
+```
+
+### Hue Generation
+
+```python
+def generate_hue(rgb):
+    mx = max( rgb )
+    mn = min( rgb )
+    dlt = mx - mn
+
+    #lol idk what to do in this case
+    if dlt == 0:
+        dlt = 1
+
+    if mx == rgb[0]:
+        return max_r(rgb[0],rgb[1],rgb[2],dlt)
+    elif mx == rgb[1]:
+        return max_g(rgb[0],rgb[1],rgb[2],dlt)
+    elif mx == rgb[2]:
+        return max_b(rgb[0],rgb[1],rgb[2],dlt)
+    else:
+        return -1
+```
+
+### Saturation Generation
+
+### Value Generation
+
 ## HSV -> RGB
 
 Given an HSV value, using the following function, we can determine that
