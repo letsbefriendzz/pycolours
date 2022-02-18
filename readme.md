@@ -22,6 +22,8 @@ HSV is an alternative method of representing digital colour. instead of coordina
 
 ## RGB -> HSV
 
+My implementation of the following RGB -> HSV algorithm involves multiple functions, each to define a hue, saturation, and value. Each of these functions expects an array of values between 0 - 1; the arithmetic needs our RGB values of 0 - 255 to be converted to a decimal between 0 - 1. Thus we create a fractional representation of the RGB value passed as `rgb_frac`, and send this to our functions.
+
 ```python
 def rgb_to_hsv(rgb):
     rgb_frac = [ rgb[0] / 255, rgb[1] / 255, rgb[2] / 255 ]
@@ -34,9 +36,11 @@ def rgb_to_hsv(rgb):
 
 ### Hue Generation
 
-Hue generation is a quite involved process. It is dependent on the Value, which is incredibly easy to determine.
+Hue generation is a quite involved process. There are various outcomes, depending on which value within the fractional RGB array passed to it is the largest. There are functions defined for each case.
 
-<img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-hcalc.PNG" alt="RGB->HSV Hue" style="height:50%; width:50%;"/>
+<img src="https://www.rapidtables.com/convert/color/rgb-to-hsv/hue-calc2.gif" alt="RGB->HSV Hue" style=""/>
+
+As can be observed above, depending on which RGB field is our largest value, we perform varying arithmetic on the other two RGB fields, along with out chroma/delta value.
 
 ```python
 def generate_hue(rgb):
@@ -56,6 +60,37 @@ def generate_hue(rgb):
         return max_b(rgb[0],rgb[1],rgb[2],dlt)
     else:
         return -1
+```
+
+For the following sub-functions, we assume the following:
+
+R, G and B are the Red, Green and Blue values from our RGB array respectively.
+
+C, also represented as delta, dlt, or Δ, is the difference between the maximum and minumum values in our RGB array.
+
+#### Max = R
+
+If our maximum RGB value is R, we multiply 60 by (G - B) / C, taking the remainder of the aforementioned operation when it is divided by 6.
+
+```python
+def max_r(r,g,b,dlt):
+    return 60 * ( ( ( g - b ) / dlt ) % 6 )
+```
+
+#### Max = G
+
+If our maximum RGB value is G, we multiply 60 by (B - R) / C.
+
+```python
+def max_g(r,g,b,dlt):
+    return  60 * ( ( ( b - r ) / dlt ) + 2 )
+```
+
+#### Max = B
+
+```python
+def max_b(r,g,b,dlt):
+    return 60 * ( ( ( r - g ) / dlt ) + 4 )
 ```
 
 ### Saturation Generation
