@@ -89,7 +89,7 @@ def max_b(r,g,b,dlt):
 
 ### Saturation Generation
 
-To create a saturation value, we create C (chroma) by dividing the maximum value by the minimum value, from those within our RGB array. If the Value (or maximum value from RGB) is zero, the saturation value we return is zero. Otherwise, we calculate saturation by dividing chroma (C) by the maximum value (V).
+To create a saturation value, we create C (chroma) by subtracting the minimum value from the maximum value, from those within our RGB array. If the Value (or maximum value from RGB) is zero, the saturation value we return is zero. Otherwise, we calculate saturation by dividing chroma (C) by the maximum value (V).
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-scalc.PNG" alt="RGB->HSV Sat" style="height:20%; width:20%;"/>
 
