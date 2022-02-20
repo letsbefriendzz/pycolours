@@ -46,10 +46,6 @@ def generate_hue(rgb):
     mn = min( rgb )
     dlt = mx - mn
 
-    #lol idk what to do in this case
-    if dlt == 0:
-        dlt = 1
-
     if mx == rgb[0]:
         return max_r(rgb[0],rgb[1],rgb[2],dlt)
     elif mx == rgb[1]:
