@@ -107,7 +107,7 @@ The Value field is the easiest to populate. As established, we take the RGB valu
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/rgb-hsv-vcalc.PNG" alt="RGB->HSV Sat" style="height:40%; width:40%;"/>
 
-Really, the below function isn't necessary; you could just perform this operation within the parent rgb_to_hsv function. For legibility's sake, however, I've kept it.
+Really, the below function isn't necessary; you could just perform this operation within the parent `rgb_to_hsv` function. For legibility's sake, however, I've kept it.
 
 ```python
 def generate_val(rgb):
@@ -121,6 +121,13 @@ Given an HSV value, using the following function, we can determine that
 `(RGB) = f(5) x 255, f(3) x 255, f(1) x 255`
 
 <img src="https://github.com/letsbefriendzz/pycolours/blob/master/_readme_source/hsv-rgb-fn.PNG" alt="HSV->RGB f(n)" style="height:40%; width:40%;"/>
+
+First, we create a function that returns a three wide array of the respective RGB values that are returned by the aforementioned function.
+
+```python
+def hsv_to_rgb(hsv):
+    return [  (hsv_func(hsv, 5) * 255), (hsv_func(hsv, 3) * 255), (hsv_func(hsv, 1) * 255) ]
+```
 
 This is very straight forward to implement. We create a function with two parameters; hsv, a three element array representing hue, saturation and value, and n, to sub into our function.
 
